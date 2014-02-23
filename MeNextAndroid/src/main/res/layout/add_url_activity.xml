@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/background"
+    android:textColor="@color/white"
+    android:textColorHint="@color/gray" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:src="@drawable/logo_with_words"
+        android:contentDescription="@string/logo"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textUri"
+        android:ems="10"
+        android:id="@+id/urlText"
+        android:hint="@string/url"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/select_a_group"
+        android:id="@+id/textView"
+        android:layout_below="@+id/urlText"
+        android:layout_alignLeft="@+id/groupSpinner"
+        android:layout_alignStart="@+id/groupSpinner"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/groupSpinner"
+        android:layout_below="@+id/urlText"
+        android:layout_marginTop="50dp"
+        android:layout_alignRight="@+id/urlText"
+        android:layout_alignEnd="@+id/urlText"
+        android:textColor="@color/white"
+        android:textColorHint="@color/gray"
+        android:layout_alignLeft="@+id/urlText"
+        android:layout_alignStart="@+id/urlText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ok"
+        android:id="@+id/okButton"
+        android:layout_below="@+id/groupSpinner"
+        android:layout_marginTop="35dp"
+        android:layout_alignRight="@+id/groupSpinner"
+        android:layout_alignEnd="@+id/groupSpinner"
+        android:layout_alignLeft="@+id/urlText"
+        android:layout_alignStart="@+id/urlText" />
+</RelativeLayout>

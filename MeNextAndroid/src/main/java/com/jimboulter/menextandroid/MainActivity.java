@@ -20,6 +20,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -55,7 +57,20 @@ public class MainActivity extends Activity
         //Get the list of groups for that user(These will be displayed in the nav drawer
         //for easy switching
         //TODO: fetch the user's groups
+        ArrayList<String> groups = new ArrayList<String>();
+        groups.add("Group 1");
+        groups.add("Group 2");
+        groups.add("Group 3");
 
+        //allows sharing from youtube app
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String url = extras.getString(Intent.EXTRA_TEXT);
+            Intent addUrlIntent = new Intent(MainActivity.this, AddUrlActivity.class);
+            addUrlIntent.putExtra(getString(R.string.url), url);
+            addUrlIntent.putStringArrayListExtra(getString(R.string.groups), groups);
+            startActivity(addUrlIntent);
+        }
 
 
         setContentView(R.layout.activity_main);

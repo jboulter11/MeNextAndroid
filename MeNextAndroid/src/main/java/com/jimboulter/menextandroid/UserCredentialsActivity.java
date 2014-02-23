@@ -1,5 +1,6 @@
 package com.jimboulter.menextandroid;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -32,6 +33,12 @@ public class UserCredentialsActivity extends Activity {
         else
         {
             Toast.makeText(this, getString(R.string.ask_for_cred), Toast.LENGTH_LONG).show();
+        }
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null)
+        {
+            actionBar.hide();
         }
 
         setContentView(R.layout.user_credentials_activity);//display new view
