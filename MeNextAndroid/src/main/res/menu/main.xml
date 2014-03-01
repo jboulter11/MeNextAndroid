@@ -1,9 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jimboulter.menextandroid.MainActivity" >
-    <item android:id="@+id/action_example"
-        android:title="@string/action_example"
-        android:showAsAction="withText|ifRoom" />
+    <item android:id="@+id/add_url_action"
+        android:title="@string/add_url"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_add_to_queue"/>
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"

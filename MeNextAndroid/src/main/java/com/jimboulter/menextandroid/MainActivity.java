@@ -1,23 +1,19 @@
 package com.jimboulter.menextandroid;
 
 import android.app.Activity;
-;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -57,6 +53,8 @@ public class MainActivity extends Activity
         //Get the list of groups for that user(These will be displayed in the nav drawer
         //for easy switching
         //TODO: fetch the user's groups
+
+        //placeholder ArrayList
         ArrayList<String> groups = new ArrayList<String>();
         groups.add("Group 1");
         groups.add("Group 2");
@@ -65,11 +63,11 @@ public class MainActivity extends Activity
         //allows sharing from youtube app
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String url = extras.getString(Intent.EXTRA_TEXT);
-            Intent addUrlIntent = new Intent(MainActivity.this, AddUrlActivity.class);
-            addUrlIntent.putExtra(getString(R.string.url), url);
-            addUrlIntent.putStringArrayListExtra(getString(R.string.groups), groups);
-            startActivity(addUrlIntent);
+            String url = extras.getString(Intent.EXTRA_TEXT); //get url from youtube app
+            Intent addUrlIntent = new Intent(MainActivity.this, AddUrlActivity.class); //my intent
+            addUrlIntent.putExtra(getString(R.string.url), url); //add url into my intent
+            addUrlIntent.putStringArrayListExtra(getString(R.string.groups), groups); //add groups
+            startActivity(addUrlIntent); //execute my intent, passing url and group list
         }
 
 
@@ -95,17 +93,7 @@ public class MainActivity extends Activity
     }
 
     public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_section1);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_section2);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_section3);
-                break;
-        }
+        mTitle = getString(R.string.title_section) + Integer.toString(number);
     }
 
     public void restoreActionBar() {
@@ -136,10 +124,7 @@ public class MainActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
     /**

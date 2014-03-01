@@ -2,12 +2,10 @@
 <resources>
 
     <string name="app_name">MeNext</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section">Section</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
+    <string name="add_url">Submit Content</string>
     <string name="action_settings">Settings</string>
 
     //MY STRINGS
@@ -26,6 +24,8 @@
     <string name="url">URL</string>
     <string name="groups">groups</string>
     <string name="select_a_group">Select a group:</string>
+    <string name="register">Need an account?</string>
+    <string name="register_link">http://jimboulter.com</string>
 
     //ERRORS
     <string name="no_groups_error">No Groups!</string>
