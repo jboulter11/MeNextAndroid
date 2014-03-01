@@ -17,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -30,6 +31,12 @@ public class MainActivity extends Activity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+
+    /**
+     * placeholder ArrayList of groups
+     */
+    private ArrayList<String> groups
+            = new ArrayList<String>(Arrays.asList("Group 1", "Group 2", "Group 3"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +60,6 @@ public class MainActivity extends Activity
         //Get the list of groups for that user(These will be displayed in the nav drawer
         //for easy switching
         //TODO: fetch the user's groups
-
-        //placeholder ArrayList
-        ArrayList<String> groups = new ArrayList<String>();
-        groups.add("Group 1");
-        groups.add("Group 2");
-        groups.add("Group 3");
 
         //allows sharing from youtube app
         Bundle extras = getIntent().getExtras();
@@ -125,6 +126,14 @@ public class MainActivity extends Activity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         return id == R.id.action_settings || super.onOptionsItemSelected(item);
+
+
+    }
+
+    public void addToQueueClick(MenuItem item) {
+        Intent addUrlIntent = new Intent(MainActivity.this, AddUrlActivity.class); //my intent
+        addUrlIntent.putStringArrayListExtra(getString(R.string.groups), groups); //add groups
+        startActivity(addUrlIntent); //execute my intent, passing url and group list
     }
 
     /**

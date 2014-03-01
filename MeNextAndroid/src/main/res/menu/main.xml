@@ -4,7 +4,8 @@
     <item android:id="@+id/add_url_action"
         android:title="@string/add_url"
         android:showAsAction="ifRoom"
-        android:icon="@drawable/ic_action_add_to_queue"/>
+        android:icon="@drawable/ic_action_add_to_queue"
+        android:onClick="addToQueueClick"/>
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
