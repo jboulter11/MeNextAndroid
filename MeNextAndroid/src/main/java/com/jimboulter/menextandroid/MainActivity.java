@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,10 +34,14 @@ public class MainActivity extends Activity
     private CharSequence mTitle;
 
     /**
-     * placeholder ArrayList of groups
+     * placeholder ArrayList of groups and tracks
      */
     private ArrayList<String> groups
             = new ArrayList<String>(Arrays.asList("Group 1", "Group 2", "Group 3"));
+    private ArrayList<String> tracks
+            = new ArrayList<String>(Arrays.asList("http://www.youtube.com/watch?v=NK2FqPNIT_U",
+            "http://www.youtube.com/watch?v=bbEoRnaOIbs",
+            "http://www.youtube.com/watch?v=NK2FqPNIT_U"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +94,7 @@ public class MainActivity extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, QueueFragment.newInstance(tracks))
                 .commit();
     }
 
@@ -139,7 +144,7 @@ public class MainActivity extends Activity
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class QueueFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -150,15 +155,15 @@ public class MainActivity extends Activity
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static QueueFragment newInstance(ArrayList<String> tracks) {
+            QueueFragment fragment = new QueueFragment();
             Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            args.putStringArrayList(ARG_SECTION_NUMBER, tracks);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public PlaceholderFragment() {
+        public QueueFragment() {
         }
 
         @Override

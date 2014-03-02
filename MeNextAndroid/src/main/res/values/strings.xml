@@ -26,9 +26,13 @@
     <string name="select_a_group">Select a group:</string>
     <string name="register">Need an account?</string>
     <string name="register_link">http://jimboulter.com</string>
+    <string name="video_preview">Video Preview</string>
+    <string name="vote_up">Up</string>
+    <string name="vote_down">Down</string>
 
     //ERRORS
     <string name="no_groups_error">No Groups!</string>
+
 
     //COLORS
     <color name="background">#8e3e33</color>
