@@ -130,9 +130,7 @@ public class MainActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        return id == R.id.action_settings || super.onOptionsItemSelected(item);
-
-
+        return (id == R.id.action_settings) || super.onOptionsItemSelected(item);
     }
 
     public void addToQueueClick(MenuItem item) {
@@ -140,50 +138,4 @@ public class MainActivity extends Activity
         addUrlIntent.putStringArrayListExtra(getString(R.string.groups), groups); //add groups
         startActivity(addUrlIntent); //execute my intent, passing url and group list
     }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class QueueFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static QueueFragment newInstance(ArrayList<String> tracks) {
-            QueueFragment fragment = new QueueFragment();
-            Bundle args = new Bundle();
-            args.putStringArrayList(ARG_SECTION_NUMBER, tracks);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public QueueFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            assert rootView != null;
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            assert getArguments() != null;
-            textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            assert getArguments() != null;
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
-    }
-
 }
