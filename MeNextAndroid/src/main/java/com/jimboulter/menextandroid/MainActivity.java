@@ -130,6 +130,15 @@ public class MainActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        if(id == R.id.action_settings)
+        {
+            Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class); //my intent
+            startActivity(settingsIntent); //go to settings activity
+        }
+
+        // If they selected one of our items,
+        // or they selected something super knows about, return true.
         return (id == R.id.action_settings) || super.onOptionsItemSelected(item);
     }
 

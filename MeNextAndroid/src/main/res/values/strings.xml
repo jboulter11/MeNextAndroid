@@ -8,11 +8,12 @@
     <string name="add_url">Submit Content</string>
     <string name="action_settings">Settings</string>
 
-    //MY STRINGS
+    //SETTING STRINGS
     <string name="default_setting">null</string>
     <string name="first_time_setting">firstTime</string>
     <string name="username_setting">username</string>
     <string name="password_setting">password</string>
+    <string name="setting_title">This is where I would put my settings…IF I HAD ANY</string>
 
     //MISC STRINGS
     <string name="logo">logo</string>
