@@ -1,7 +1,7 @@
 package com.jimboulter.menextandroid;
 
 /**
- * Created by Janet on 3/23/14.
+ * Created by Jim Boulter on 3/23/14.
  */
 
 import android.app.Activity;
@@ -24,30 +24,14 @@ public class QueueFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    /**
-     * Returns a new instance of this fragment for the given section
-     * number.
-     */
-    public static QueueFragment newInstance(ArrayList<String> tracks) {
-        QueueFragment fragment = new QueueFragment();
-        Bundle args = new Bundle();
-        args.putStringArrayList(ARG_SECTION_NUMBER, tracks);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public QueueFragment() {
+    public QueueFragment(String track) {
+        //TODO: Youtube API junk to get track stuff
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-        assert rootView != null;
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        assert getArguments() != null;
-        textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
-        return rootView;
+        return inflater.inflate(R.layout.fragment_queue_item, container, false);
     }
 
     @Override

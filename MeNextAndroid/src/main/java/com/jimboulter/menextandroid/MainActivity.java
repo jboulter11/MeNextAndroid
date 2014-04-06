@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.net.URI;
@@ -94,12 +95,12 @@ public class MainActivity extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, QueueFragment.newInstance(tracks))
+                .replace(R.id.container, new FragmentQueueHolder(tracks))
                 .commit();
     }
 
     public void onSectionAttached(int number) {
-        mTitle = getString(R.string.title_section) + Integer.toString(number);
+        mTitle = getString(R.string.title_section) + " " + Integer.toString(number);
     }
 
     public void restoreActionBar() {
