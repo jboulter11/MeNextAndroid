@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="app_name">MeNext</string>
+    <string name="title_section">Section</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="add_url">Submit Content</string>
+    <string name="action_settings">Settings</string>
+
+    //SETTING STRINGS
+    <string name="default_setting">null</string>
+    <string name="first_time_setting">firstTime</string>
+    <string name="username_setting">username</string>
+    <string name="password_setting">password</string>
+    <string name="setting_title">This is where I would put my settings…IF I HAD ANY</string>
+
+    //MISC STRINGS
+    <string name="logo">logo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="ok">OK</string>
+    <string name="login">Log In</string>
+    <string name="ask_for_cred">Please enter your credentials.</string>
+    <string name="url">URL</string>
+    <string name="groups">groups</string>
+    <string name="select_a_group">Select a group:</string>
+    <string name="register">Need an account?</string>
+    <string name="register_link">http://jimboulter.com</string>
+    <string name="video_preview">Video Preview</string>
+    <string name="vote_up">Up</string>
+    <string name="vote_down">Down</string>
+
+    //ERRORS
+    <string name="no_groups_error">No Groups!</string>
+
+
+    //COLORS
+    <color name="background">#8e3e33</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#A7A7A7</color>
+
+</resources>
