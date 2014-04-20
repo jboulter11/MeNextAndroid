@@ -18,6 +18,11 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compile 'com.android.support:support-v13:+'
+    compile files('C:/MeNextAndroid/libs/google-http-client-android-1.18.0-rc.jar')
 }
