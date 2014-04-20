@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Jim Boulter on 4/6/14.
+ * This will simply act to replace the original view with a scrollview to house queuefragments
  */
 public class FragmentQueueHolder extends Fragment{
     protected static ArrayList<QueueFragment> queueList;
@@ -32,7 +33,7 @@ public class FragmentQueueHolder extends Fragment{
         assert queueList != null;
         for(String track : tracks)
         {
-            queueList.add(new QueueFragment(track));
+            queueList.add(QueueFragment.getInstanceOf(track)); //getting null pointer exception here
         }
     }
 }

@@ -3,7 +3,8 @@
 <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/queueItemLayout">
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -41,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/video_preview"
-        android:id="@+id/textView"
+        android:id="@+id/videoTitleTextView"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/voteUpButton"
         android:layout_toLeftOf="@id/videoPreviewImageView"

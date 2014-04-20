@@ -2,7 +2,9 @@ package com.jimboulter.menextandroid;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,7 +56,7 @@ public class AddUrlActivity extends Activity{
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: implement share to group
+                //TODO: implement share to group and trim URL to just id
                 finish();
             }
         });

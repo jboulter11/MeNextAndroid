@@ -2,22 +2,17 @@ package com.jimboulter.menextandroid;
 
 import android.app.Activity;
 import android.app.ActionBar;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.View;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -40,9 +35,9 @@ public class MainActivity extends Activity
     private ArrayList<String> groups
             = new ArrayList<String>(Arrays.asList("Group 1", "Group 2", "Group 3"));
     private ArrayList<String> tracks
-            = new ArrayList<String>(Arrays.asList("http://www.youtube.com/watch?v=NK2FqPNIT_U",
-            "http://www.youtube.com/watch?v=bbEoRnaOIbs",
-            "http://www.youtube.com/watch?v=NK2FqPNIT_U"));
+            = new ArrayList<String>(Arrays.asList("NK2FqPNIT_U",
+            "bbEoRnaOIbs",
+            "NK2FqPNIT_U"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +72,6 @@ public class MainActivity extends Activity
             startActivity(addUrlIntent); //execute my intent, passing url and group list
         }
 
-
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -93,14 +87,16 @@ public class MainActivity extends Activity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+        onSectionAttached(position);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, new FragmentQueueHolder(tracks))
                 .commit();
+
     }
 
     public void onSectionAttached(int number) {
-        mTitle = getString(R.string.title_section) + " " + Integer.toString(number);
+        mTitle = groups.get(number);
     }
 
     public void restoreActionBar() {
