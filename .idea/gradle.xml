@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/com.jimboulter.menextandroid" />
+            <option value="C:\Users\HitzE\Documents\github\MeNextAndroid" />
+            <option value="C:\Users\HitzE\Documents\github\MeNextAndroid\com.jimboulter.menextandroid" />
           </set>
         </option>
       </GradleProjectSettings>
