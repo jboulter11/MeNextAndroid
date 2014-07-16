@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
      */
     ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +57,16 @@ public class MainActivity extends Activity {
         //If it's the first time the App has been opened, we need to get user credentials
         //TODO: change this over to a login script with the MySQL login database
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        if(!sharedPref.getBoolean(getString(R.string.first_time_setting), false))
+        if(!sharedPref.getBoolean(getString(R.string.session_id), false))
         {
             //this is the users first time in the app
             Intent getCredIntent = new Intent(MainActivity.this, UserCredentialsActivity.class);
             startActivity(getCredIntent);
 
-            //write that the user has entered the app before and we obtained their credentials
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putBoolean(getString(R.string.first_time_setting), true);
-            editor.commit();
+//            //write that the user has entered the app before and we obtained their credentials
+//            SharedPreferences.Editor editor = sharedPref.edit();
+//            editor.putBoolean(getString(R.string.first_time_setting), true);
+//            editor.commit();
         }
 
         //Get the list of groups for that user(These will be displayed in the nav drawer

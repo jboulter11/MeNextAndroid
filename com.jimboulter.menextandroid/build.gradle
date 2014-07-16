@@ -2,7 +2,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.1"
+    buildToolsVersion '19.1.0'
 
     defaultConfig {
         minSdkVersion 14
@@ -23,6 +23,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v13:+'
+    compile 'com.android.support:support-v13:20.0.0'
     compile files('C:/MeNextAndroid/libs/google-http-client-android-1.18.0-rc.jar')
 }
